@@ -17,6 +17,6 @@ public class TrashCan : MonoBehaviour {
 		print ("[onTriggerEnger" + other.name);
 		Trash trash = other.GetComponent<Trash> ();
 		trash.hitToTrashCan = true;
-		TrashSpawn.instance.RemoveOldestTrash ();
+		Destroy(other.gameObject);
 	}
 }

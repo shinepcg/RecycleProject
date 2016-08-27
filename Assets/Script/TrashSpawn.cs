@@ -33,14 +33,7 @@ public class TrashSpawn : MonoBehaviour {
 		return null;
 	}
 
-	public bool RemoveOldestTrash() {
-		GameObject obj = GetOldestTrash ();
-		if (obj == null)
-			return false;
-		
-		trashList.Remove (obj);
-		Destroy (obj);
-
-		return true;
+	public void RemoveTrash(GameObject trash) {
+		trashList.Remove (trash);
 	}
 }
