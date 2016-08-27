@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\ControlManager.cs" />
     <Compile Include="Assets\Script\MainUiCanvas.cs" />
+    <Compile Include="Assets\Script\Trash.cs" />
+    <Compile Include="Assets\Script\TrashCan.cs" />
+    <Compile Include="Assets\Script\TrashSpawn.cs" />
     <Compile Include="Assets\Z ! Voxel BlocksAssets\Scripts\AutoRotary.cs" />
     <Compile Include="Assets\Z ! Voxel BlocksAssets\Scripts\Rulemovement.cs" />
     <Compile Include="Assets\Z ! Voxel BlocksAssets\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
