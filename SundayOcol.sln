@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EF02F78C-F39D-CFDB-D268-DF4F9AAC8792}") = "SundayOcol", "Assembly-CSharp.csproj", "{1A98727A-CABD-C93B-06EB-5A8992831B1C}"
+EndProject
+Project("{EF02F78C-F39D-CFDB-D268-DF4F9AAC8792}") = "SundayOcol", "Assembly-CSharp-Editor.csproj", "{0334C41B-7502-7DD5-0FF6-1ED69AA563FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A98727A-CABD-C93B-06EB-5A8992831B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A98727A-CABD-C93B-06EB-5A8992831B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A98727A-CABD-C93B-06EB-5A8992831B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A98727A-CABD-C93B-06EB-5A8992831B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0334C41B-7502-7DD5-0FF6-1ED69AA563FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0334C41B-7502-7DD5-0FF6-1ED69AA563FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0334C41B-7502-7DD5-0FF6-1ED69AA563FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0334C41B-7502-7DD5-0FF6-1ED69AA563FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
