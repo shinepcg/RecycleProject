@@ -4,6 +4,12 @@ using System.Collections;
 public class Trash : MonoBehaviour {
 
 	public bool hitToTrashCan = false;
+	float speed = 0.05f;
+	public float Speed {
+		get { return speed; }
+		set { speed = value;}
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +21,7 @@ public class Trash : MonoBehaviour {
 		if (goToTrashCan_ != null)
 			return;
 		
-		transform.position += new Vector3 (-0.03f, 0, 0);
+		transform.position += new Vector3 (-speed, 0, 0);
 	}
 
 	Coroutine goToTrashCan_ = null;

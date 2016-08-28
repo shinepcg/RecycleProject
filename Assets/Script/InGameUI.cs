@@ -12,7 +12,7 @@ public class InGameUI : MonoBehaviour {
 	}
 
 	void Update() {
-		txtScore.text = ScoreManager.instance.GetScore ().ToString();
+		txtScore.text = ScoreManager.instance.Score.ToString();
 	}
 
 	void Awake() {

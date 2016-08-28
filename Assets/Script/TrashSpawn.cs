@@ -7,6 +7,10 @@ public class TrashSpawn : MonoBehaviour {
 	public static TrashSpawn instance;
 	public GameObject[] trashes;
 	public List<GameObject> trashList;
+	float spawnIntervalSec = 1.5f;
+	public float SpawnIntervalSec{
+		get { return spawnIntervalSec; }
+	}
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -18,7 +22,7 @@ public class TrashSpawn : MonoBehaviour {
 
 			trashList.Add (newTrash);
 
-			yield return new WaitForSeconds (2);
+			yield return new WaitForSeconds (spawnIntervalSec);
 		}
 	}
 
@@ -35,5 +39,10 @@ public class TrashSpawn : MonoBehaviour {
 
 	public void RemoveTrash(GameObject trash) {
 		trashList.Remove (trash);
+	}
+
+	public float IncreaseSpawnInterval() {
+		spawnIntervalSec += 0.1f;
+		return spawnIntervalSec;
 	}
 }

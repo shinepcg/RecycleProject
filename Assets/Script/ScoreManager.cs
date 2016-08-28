@@ -5,6 +5,9 @@ public class ScoreManager : MonoBehaviour {
 
 	public static ScoreManager instance;
 	int score = 0;
+	public int Score {
+		get { return score; }
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -12,10 +15,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake() {
 		instance = this;
-	}
-
-	public int GetScore() {
-		return score;
 	}
 
 	public void RemoveTrash() {
