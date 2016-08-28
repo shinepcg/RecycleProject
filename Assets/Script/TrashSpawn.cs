@@ -5,12 +5,13 @@ using System.Collections.Generic;
 public class TrashSpawn : MonoBehaviour {
 	
 	public static TrashSpawn instance;
-	public GameObject[] trashes;
-	public List<GameObject> trashList;
-	float spawnIntervalSec = 1.5f;
-	public float SpawnIntervalSec{
-		get { return spawnIntervalSec; }
+	public GameObject[] originalTrasheObjs;
+	GameObject[] activeTrashes;
+	public GameObject[] ActiveTrashes {
+		get { return activeTrashes; }
+		set { activeTrashes = value; }
 	}
+	public List<GameObject> trashList;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -18,11 +19,15 @@ public class TrashSpawn : MonoBehaviour {
 			int randNum = Random.Range (0, 10);
 
 			GameObject newTrash = 
-				(GameObject)Instantiate(trashes[randNum], transform.position, Quaternion.identity);
+				(GameObject)Instantiate(activeTrashes [randNum], transform.position, Quaternion.identity);
+			
+			Trash trash = newTrash.GetComponent<Trash> ();
+			trash.Speed = LevelManager.instance.TrashSpeed;
 
 			trashList.Add (newTrash);
 
-			yield return new WaitForSeconds (spawnIntervalSec);
+
+			yield return new WaitForSeconds (LevelManager.instance.SpawnIntervalSec);
 		}
 	}
 
@@ -39,10 +44,5 @@ public class TrashSpawn : MonoBehaviour {
 
 	public void RemoveTrash(GameObject trash) {
 		trashList.Remove (trash);
-	}
-
-	public float IncreaseSpawnInterval() {
-		spawnIntervalSec += 0.1f;
-		return spawnIntervalSec;
 	}
 }

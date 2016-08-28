@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\ControlManager.cs" />
      <Compile Include="Assets\Script\InGameUI.cs" />
+     <Compile Include="Assets\Script\LevelManager.cs" />
      <Compile Include="Assets\Script\MainUiCanvas.cs" />
      <Compile Include="Assets\Script\ScoreManager.cs" />
      <Compile Include="Assets\Script\Trash.cs" />
