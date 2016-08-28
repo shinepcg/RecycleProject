@@ -7,6 +7,14 @@ public class ControlManager : MonoBehaviour {
 	void Start () {
 	
 	}
+
+	void MoveTrashToCan(GameObject trash, GameObject can) {
+		if (trash) {
+			Trash trashComp = trash.GetComponent<Trash> ();
+			trashComp.GoToTrashCan (can);
+			TrashSpawn.instance.RemoveTrash (trash);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,11 +27,8 @@ public class ControlManager : MonoBehaviour {
 			if (hit.transform.tag == "trashcan") {
 				print ("[ControlManager]" + hit.transform.name);
 
-				GameObject obj = TrashSpawn.instance.GetOldestTrash ();
-				if (obj) {
-					Trash trash = obj.GetComponent<Trash> ();
-					trash.GoToTrashCan (hit.transform.gameObject);
-				}
+				MoveTrashToCan (TrashSpawn.instance.GetOldestTrash (),
+					hit.transform.gameObject);
 			}
 		}	
 	}
