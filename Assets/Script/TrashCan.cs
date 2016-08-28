@@ -18,5 +18,7 @@ public class TrashCan : MonoBehaviour {
 		Trash trash = other.GetComponent<Trash> ();
 		trash.hitToTrashCan = true;
 		Destroy(other.gameObject);
+
+		ScoreManager.instance.RemoveTrash ();
 	}
 }
