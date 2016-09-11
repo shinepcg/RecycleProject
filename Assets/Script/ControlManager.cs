@@ -15,7 +15,7 @@ public class ControlManager : MonoBehaviour {
 			TrashSpawn.instance.RemoveTrash (trash);
 		}
 	}
-	
+    
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
