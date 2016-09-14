@@ -14,11 +14,18 @@ public class TrashCan : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		print ("[onTriggerEnger" + other.name);
-		Trash trash = other.GetComponent<Trash> ();
-		trash.hitToTrashCan = true;
-		Destroy(other.gameObject);
 
-		ScoreManager.instance.RemoveTrash ();
+	}
+
+	void OnTriggerStay (Collider other) {
+		print ("[onTriggerStay" + other.name);
+		Trash trash = other.GetComponent<Trash> ();
+		if (trash) {
+			if (!trash.OnHolding) {
+				TrashSpawn.instance.RemoveTrash(other.gameObject);
+				Destroy(other.gameObject);
+				ScoreManager.instance.RemoveTrash ();
+			}
+		}
 	}
 }

@@ -5,18 +5,14 @@ using System.Collections.Generic;
 public class TrashSpawn : MonoBehaviour {
 	
 	public static TrashSpawn instance;
-	public GameObject[] originalTrasheObjs;
-	GameObject[] activeTrashes;
-	public GameObject[] ActiveTrashes {
-		get { return activeTrashes; }
-		set { activeTrashes = value; }
-	}
+	public GameObject[] originalTrashes;
+	public GameObject[] activeTrashes;
 	public List<GameObject> trashList;
 
 	// Use this for initialization
 	IEnumerator Start () {
 		while (true) {
-			int randNum = Random.Range (0, 10);
+			int randNum = Random.Range (0, activeTrashes.Length);
 
 			GameObject newTrash = 
 				(GameObject)Instantiate(activeTrashes [randNum], transform.position, Quaternion.identity);

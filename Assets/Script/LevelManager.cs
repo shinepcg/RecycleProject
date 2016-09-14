@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 
@@ -25,6 +26,11 @@ public class LevelManager : MonoBehaviour {
 	void SetLevel1() {
 		trashSpeed = 0.05f;
 		spawnIntervalSec = 1.5f;
-		TrashSpawn.instance.ActiveTrashes = TrashSpawn.instance.originalTrasheObjs;
+		List<GameObject> trashes = new List<GameObject> ();
+		trashes.Add (TrashSpawn.instance.originalTrashes [0]);
+		trashes.Add (TrashSpawn.instance.originalTrashes [1]);
+		trashes.Add (TrashSpawn.instance.originalTrashes [2]);
+		trashes.Add (TrashSpawn.instance.originalTrashes [3]);
+		TrashSpawn.instance.activeTrashes = trashes.ToArray ();
 	}
 }

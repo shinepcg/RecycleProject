@@ -2,42 +2,35 @@
 using System.Collections;
 
 public class Trash : MonoBehaviour {
-
-	public bool hitToTrashCan = false;
+	public Vector3 moveVec = new Vector3();
 	float speed = 0.05f;
 	public float Speed {
 		get { return speed; }
 		set { speed = value;}
 	}
-
+	public bool onHolding = false;
+	public bool OnHolding {
+		get { return onHolding; }
+	}
 
 	// Use this for initialization
 	void Start () {
-	
+		moveVec = new Vector3 (-speed, 0, 0);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (goToTrashCan_ != null)
-			return;
-		
-		transform.position += new Vector3 (-speed, 0, 0);
+		if (moveVec != Vector3.zero) 
+			transform.position += moveVec;
 	}
 
-	Coroutine goToTrashCan_ = null;
-
-	public void GoToTrashCan(GameObject trashCan) {
-		if (goToTrashCan_ != null) {
-			StopCoroutine (goToTrashCan_);
-		}
-		goToTrashCan_ = StartCoroutine (GoToTrashCanCo (trashCan));
+	public void Hold() {
+		// stop moving
+		moveVec = Vector3.zero;
+		onHolding = true;
 	}
 
-	IEnumerator GoToTrashCanCo(GameObject trashCan) {
-		while (!hitToTrashCan) {
-			transform.position = 
-				Vector3.Lerp (transform.position, trashCan.transform.position, 0.1f);
-			yield return null;
-		}
+	public void ReleaseHolding() {
+		onHolding = false;
 	}
 }
